@@ -1,0 +1,16 @@
+[
+    {
+        "fileId": 1,
+        "videoInput": "MyFirstVideo",
+        "viewFile": "http://localhost:4000/1234567890video.mp4",
+        "time": "10:35",
+        "data": "9/22/2026",
+        "downloadLink": "http://localhost:4000/download/1234567890video.mp4",
+        "size": 24,
+        "user": {
+            "userId": 1,
+            "username": "johndoe",
+            "profileImg": "http://localhost:4000/1234567890avatar.jpg"
+        }
+    }
+]

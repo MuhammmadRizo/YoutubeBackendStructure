@@ -1,12 +1,10 @@
 import express from "express";
-import fileUpload from "express-fileupload";
-import fs from "fs";
-import { join } from "path";
+import authController from "../controllers/authC.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.send("xammasi yaxshi")
-})
+router
+  .post("/register", authController.authRegister)
+  .post("/login", authController.authLogin);
 
-export default router
+export default router;
