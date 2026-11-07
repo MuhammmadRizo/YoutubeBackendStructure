@@ -2,7 +2,7 @@
 
 ### BackEnd
 
-1. <span style="color: orange">POST</span> - register sahifasi uchun yangi user qo'shish tugallandi user malumotlari kiritilganda u saqlanadi va db ichida users.json fayliga yoziladi ✅
+1. POST - register sahifasi uchun yangi user qo'shish tugallandi user malumotlari kiritilganda u saqlanadi va db ichida users.json fayliga yoziladi ✅
 2. POST - login uchun qachonki users.json ichidagi username va password bir biriga mos tushsa login muvofaqiyatli amalga oshgani haqida xabar chiqadi ✅
 3. GET - barcha userlarni olish uchun ishlatishga API  ✅
 4. POST - yangi video fayli yuklash o'xshadi fayl muvofaqiyatli yuklansa malumotlar to'g'ridan to'g'ri db ichidagi files.json fayliga yoziladi ✅
