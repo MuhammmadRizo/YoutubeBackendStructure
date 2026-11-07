@@ -21,17 +21,11 @@ loginForm.addEventListener("submit", async (e) => {
       password: passwordInput.value,
     };
 
-    const userLog = await axios.post(
-      "https://n30-youtube-api.onrender.com/login",
-      userInfo,
-    );
+    const userLog = await axios.post("http://localhost:5050/login", userInfo);
 
     if (userLog.data.status == 200) {
-      window.location = "../admin.html";
+      window.location = "../frontend/index.html";
     }
-
-    window.localStorage.setItem("profileImg", userLog.data.data.profileImg);
-    window.localStorage.setItem("token", userLog.data.token);
   } catch (error) {
     errorMessage.textContent = "username yoki parol xato";
   }

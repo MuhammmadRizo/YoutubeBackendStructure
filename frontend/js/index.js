@@ -4,12 +4,16 @@ const iframesWrapper = document.querySelector(".iframes-wrapper");
 const iframesList = document.querySelector(".iframes-list");
 const homeButton = document.querySelector("#homeButton");
 const inputSearch = document.querySelector("#inputSearch");
+const toggleMenu = document.querySelector(".toggle-menu")
+
+toggleMenu.addEventListener("click", () => {
+  toggleMenu.classList.add("toggleLeft")
+})
 
 let voiceS = new SpeechRecognition();
 voiceS.lang = "en-US";
 let publicVideos = [];
 
-let profileImg = window.localStorage.getItem("profileImg");
 
 function voiceSearch() {
   voiceS.start();
@@ -85,10 +89,9 @@ async function getAllVideos(selectedUser, findVideos) {
                     <h3 class="channel-name">${video.videoInput}</h3>
                     <h2 class="iframe-title">${video.user.username}</h2>
                     <time class="uploaded-time">${video.date} | ${new Date().toLocaleTimeString()}</time>
-                    <a class="download" href="${video.downloadLink}">
+                    <div class="download" href="${video.downloadLink}">
                         <span>${video.size} MB</span>
-                        <img src="./img/download.png">
-                    </a>
+                    </div>
                 </div>
             </div>
         </li>
@@ -107,11 +110,11 @@ inputSearch.addEventListener("input", (e) => {
 });
 
 headerRight.innerHTML += `
-    <a id="list" href=${profileImg ? "../admin.html" : "./register.html"}>
-        <img class="avatar-img" src="${profileImg ? profileImg : "./img/avatar.jpg"}" alt="avatar-img" width="32px" height="32px">
+    <a id="list" href="../frontend/admin.html">
+        <img class="avatar-img" src="./img/avatar.jpg" alt="avatar-img" width="32px" height="32px">
     </a>
 `;
 
 getAllUser();
 getAllVideos();
-// voiceSearch();
+voiceSearch();

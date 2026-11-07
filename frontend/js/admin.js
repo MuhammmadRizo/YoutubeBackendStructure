@@ -17,16 +17,14 @@ uploadInput.addEventListener("change", () => {
 });
 
 logoutBtn.addEventListener("click", () => {
-  window.location = "../login.html";
-
-  window.localStorage.clear();
+  window.location = "../frontend/login.html";
 });
 
-let token = window.localStorage.getItem("token");
+// let token = window.localStorage.getItem("token");
 
-if (!token) {
-  window.location = "../register.html";
-}
+// if (!token) {
+//   window.location = "../register.html";
+// }
 
 async function getVideos() {
   let file = await axios.get("https://n30-youtube-api.onrender.com/files/my", {
