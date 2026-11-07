@@ -40,13 +40,23 @@ const authRegister = (req, res) => {
 };
 
 const authLogin = (req, res) => {
+  const { username, password } = req.body;
+
   let allUsers = fs.readFileSync(
     join(process.cwd(), "src", "db", "users.json"),
     "utf-8",
   );
   allUsers = JSON.parse(allUsers);
 
-  res.send(allUsers);
+  let filteredUser = allUsers.filter(
+    (user) => user.username == username && user.password == password,
+  );
+
+  res.status(200).json({
+    status: 200,
+    message: "Kirish muvofaqiyatli amalga oshirildi",
+    data: filteredUser,
+  });
 };
 
 export default {

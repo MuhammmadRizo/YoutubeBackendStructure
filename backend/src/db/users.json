@@ -10,5 +10,47 @@
         "username": "Qosimboy",
         "password": "password15484322t5",
         "profileImg": "1794031622664.png"
+    },
+    {
+        "userId": 3,
+        "username": "Salim",
+        "password": "password15484322t5",
+        "profileImg": "1794042961155.png"
+    },
+    {
+        "userId": 4,
+        "username": "Qodirboy",
+        "password": "password15484322t543412",
+        "profileImg": "1794042992621.png"
+    },
+    {
+        "userId": 5,
+        "username": "Azimjon",
+        "password": "Azimjon06",
+        "profileImg": "1794043025282.png"
+    },
+    {
+        "userId": 6,
+        "username": "Shoxrux",
+        "password": "Shoxrux06",
+        "profileImg": "1794043038227.png"
+    },
+    {
+        "userId": 7,
+        "username": "dasdasdas",
+        "password": "dasdasdasd",
+        "profileImg": "1794052165587.png"
+    },
+    {
+        "userId": 8,
+        "username": "dsadasdasd",
+        "password": "asdasda",
+        "profileImg": "1794052185721.png"
+    },
+    {
+        "userId": 9,
+        "username": "Azizbek",
+        "password": "qwerty12345",
+        "profileImg": "1794052455058.png"
     }
 ]
