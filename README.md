@@ -25,12 +25,12 @@
 3. Barcha videolar chiqarildi ✅
 4. Video ostidagi ism / sana va h.k lar to'g'rilandi ✅
 5. Index sahifasi deyarli to'liq tayyor ✅
+6. Admin sahifasi tayyor ✅
 
 ##### Qolgan ish
 
-6. Index sahifasi toggleMenu va avatar uchun tekshiriv qilish ❌
-7. Admin sahifasi qilinmagan xali ❌
-8. Login sahifasi qilingmagan aniqrog'i qanday qilish kerakligi haqida idea yo'q ❌
+1. Index sahifasi toggleMenu va avatar uchun tekshiriv qilish ❌
+2. Login sahifasi qilingmagan aniqrog'i qanday qilish kerakligi haqida idea yo'q sababi har qanday so'z kiritsa ham kirib ketayapti ❌
 
 
 # Rahmat Sarflagan Vaqtingiz Uchun Eslaganlarim Shular
