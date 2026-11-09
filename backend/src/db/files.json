@@ -1,17 +1,5 @@
 [
     {
-        "fileId": 1,
-        "videoInput": "MyFirstVideo",
-        "viewFile": "http://localhost:5050/1234567890video.mp4",
-        "date": "9/22/2026",
-        "size": 24,
-        "user": {
-            "userId": 1,
-            "username": "johndoe",
-            "profileImg": "http://localhost:5050/1234567890avatar.jpg"
-        }
-    },
-    {
         "fileId": 2,
         "videoInput": "Salom",
         "viewFile": "1794047211392.mp4",
@@ -22,18 +10,6 @@
             "username": "Azimjon",
             "password": "Azimjon06",
             "profileImg": "1794043025282.png"
-        }
-    },
-    {
-        "fileId": 3,
-        "videoInput": "alik",
-        "viewFile": "http://localhost:5050/1234567890video.mp4",
-        "date": "9/22/2026",
-        "size": 24,
-        "user": {
-            "userId": 1,
-            "username": "johndoe",
-            "profileImg": "http://localhost:5050/1234567890avatar.jpg"
         }
     },
     {
@@ -77,7 +53,6 @@
     },
     {
         "fileId": 7,
-        "videoInput": "tinchkuuu",
         "viewFile": "1794049401153.mp4",
         "date": "11/7/2026",
         "size": 2.02,
@@ -86,24 +61,12 @@
             "username": "Aliboy",
             "password": "password1548",
             "profileImg": "1794031527643.png"
-        }
-    },
-    {
-        "fileId": 8,
-        "videoInput": "yaxshida ",
-        "viewFile": "1794049416598.mp4",
-        "date": "11/7/2026",
-        "size": 2.02,
-        "user": {
-            "userId": 1,
-            "username": "Aliboy",
-            "password": "password1548",
-            "profileImg": "1794031527643.png"
-        }
+        },
+        "videoInput": "tinch bosa yaxshi"
     },
     {
         "fileId": 9,
-        "videoInput": "gazini bos",
+        "videoInput": "gazini bosamiz",
         "viewFile": "1794049422265.mp4",
         "date": "11/7/2026",
         "size": 2.02,
@@ -112,6 +75,32 @@
             "username": "Aliboy",
             "password": "password1548",
             "profileImg": "1794031527643.png"
+        }
+    },
+    {
+        "fileId": 10,
+        "videoInput": "zo'r",
+        "viewFile": "1794207126495.mp4",
+        "date": "11/9/2026",
+        "size": 20.55,
+        "user": {
+            "userId": 17,
+            "username": "qlesazzzz",
+            "password": "yaxshukuuuu",
+            "profileImg": "1794205308490.png"
+        }
+    },
+    {
+        "fileId": 11,
+        "videoInput": "Xop",
+        "viewFile": "1794207219883.mp4",
+        "date": "11/9/2026",
+        "size": 2.26,
+        "user": {
+            "userId": 13,
+            "username": "Ganji",
+            "password": "Ganji516tr",
+            "profileImg": "1794205169641.png"
         }
     }
 ]

@@ -2,6 +2,7 @@ const adminWrapper = document.querySelector(".admin-wrapper");
 const videosList = document.querySelector("#videosList");
 const videoForm = document.querySelector("#videoForm");
 const videoInput = document.querySelector("#videoInput");
+const userInput = document.querySelector("#userInput");
 const uploadInput = document.querySelector("#uploadInput");
 const logoutBtn = document.querySelector("#logoutBtn");
 const fileName = document.querySelector(".file-name");
@@ -27,19 +28,16 @@ logoutBtn.addEventListener("click", () => {
 // }
 
 async function getVideos() {
-  let file = await axios.get("https://n30-youtube-api.onrender.com/files/my", {
-    headers: {
-      Authorization: "Bearer " + token,
-    },
-  });
+  let file = await axios.get("http://localhost:5050/files");
 
   file = file.data.data;
 
   adminWrapper.innerHTML = "";
   for (const f of file) {
+    console.log(f);
     adminWrapper.innerHTML += `
       <ul id="videosList" class="videos-list video-item">
-        <video controls="true" src="${f.viewFile}"></video>
+        <video controls="true" src="${"http://localhost:5050/uploads/" + f.viewFile}"></video>
         <p class="content">${f.videoInput}</p>
         <div class="videoControlIcons">
           <img class="delete-icon" src="./img/delete.png" width="25">
@@ -57,17 +55,11 @@ async function getVideos() {
       const selectVid = file[index];
       let selectVidId = selectVid.fileId;
 
-      let natija = await axios.delete(
-        `https://n30-youtube-api.onrender.com/files/`,
-        {
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-          data: {
-            fileId: selectVidId,
-          },
+      let natija = await axios.delete(`http://localhost:5050/files/`, {
+        data: {
+          fileId: selectVidId,
         },
-      );
+      });
 
       if (natija.status == 200) {
         getVideos();
@@ -84,22 +76,16 @@ async function getVideos() {
       const selectVid = file[index];
       let selectVidId = selectVid.fileId;
 
+      console.log(selectVid);
+
       let newName = window.prompt(
         `${selectVid.videoInput} - nomli videoni nima deb qayta nomlaymiz:`,
       );
 
-      let natija = await axios.put(
-        `https://n30-youtube-api.onrender.com/files/`,
-        {
-          fileId: selectVidId,
-          value: newName,
-        },
-        {
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        },
-      );
+      let natija = await axios.put(`http://localhost:5050/files/`, {
+        fileId: selectVidId,
+        videoInput: newName,
+      });
 
       if (natija.status == 200) {
         getVideos();
@@ -121,23 +107,19 @@ videoForm.addEventListener("submit", async (e) => {
   const formVideoData = new FormData();
 
   formVideoData.append("videoInput", videoInput.value);
-  formVideoData.append("file", uploadInput.files[0]);
+  formVideoData.append("username", userInput.value);
+  formVideoData.append("viewFile", uploadInput.files[0]);
 
-  const res = await axios.post(
-    "https://n30-youtube-api.onrender.com/files",
-    formVideoData,
-    {
-      headers: {
-        Authorization: "Bearer " + token,
-      },
-    },
-  );
+  const res = await axios.post("http://localhost:5050/files", formVideoData);
 
-  // console.log(res.data);
+  console.log(res);
+
+  console.log(res.data);
 
   if (res.data.status == 200) {
     getVideos();
     videoInput.value = "";
+    username.value = "";
     uploadInput.value = "";
     fileName.textContent = "click upload a video";
   }

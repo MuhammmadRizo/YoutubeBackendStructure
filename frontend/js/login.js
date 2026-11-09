@@ -23,6 +23,8 @@ loginForm.addEventListener("submit", async (e) => {
 
     const userLog = await axios.post("http://localhost:5050/login", userInfo);
 
+    console.log(userLog.data)
+
     if (userLog.data.status == 200) {
       window.location = "../frontend/index.html";
     }

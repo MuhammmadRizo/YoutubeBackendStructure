@@ -19,6 +19,7 @@
 
 ### FrontEnd
 
+
 1. Register sahifasi ishladi user register qilsa db ichidagi user.json fayliga yoziladi ✅
 2. Barcha userlar chiqarildi ✅
 3. Barcha videolar chiqarildi ✅
