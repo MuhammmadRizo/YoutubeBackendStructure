@@ -5,6 +5,7 @@ import fileUpload from "express-fileupload";
 import authRouter from "./routers/authR.js";
 import usersRouter from "./routers/usersR.js";
 import filesRouter from "./routers/filesR.js";
+import "dotenv/config.js";
 
 const app = express();
 app.use(cors("http://127.0.0.1:5500"));
@@ -19,4 +20,4 @@ app.get("/", (req, res) => {
   res.send("xammasi yaxshi");
 });
 
-app.listen(5050, () => console.log("server is running..."));
+app.listen(process.env.PORT, () => console.log("server is running..."));

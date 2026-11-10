@@ -4,16 +4,17 @@ const iframesWrapper = document.querySelector(".iframes-wrapper");
 const iframesList = document.querySelector(".iframes-list");
 const homeButton = document.querySelector("#homeButton");
 const inputSearch = document.querySelector("#inputSearch");
-const toggleMenu = document.querySelector(".toggle-menu")
+const toggleMenu = document.querySelector(".toggle-menu");
 
 toggleMenu.addEventListener("click", () => {
-  toggleMenu.classList.add("toggleLeft")
-})
+  toggleMenu.classList.add("toggleLeft");
+});
 
 let voiceS = new SpeechRecognition();
 voiceS.lang = "en-US";
 let publicVideos = [];
 
+let profileImg = window.localStorage.getItem("profileImg");
 
 function voiceSearch() {
   voiceS.start();
@@ -110,8 +111,8 @@ inputSearch.addEventListener("input", (e) => {
 });
 
 headerRight.innerHTML += `
-    <a id="list" href="../frontend/admin.html">
-        <img class="avatar-img" src="./img/avatar.jpg" alt="avatar-img" width="32px" height="32px">
+    <a id="list" href=${profileImg ? "../frontend/admin.html" : "../frontend/register.html"}>
+        <img class="avatar-img" src="${profileImg ? `http://localhost:5050/uploads/${profileImg}` : "./img/avatar.jpg"}" alt="avatar-img" width="32px" height="32px">
     </a>
 `;
 

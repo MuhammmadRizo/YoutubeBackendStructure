@@ -1,18 +1,12 @@
-import fs from "fs";
-import { join } from "path";
+import osFile from "../utils/fileSystem.js";
 
 const getAllUsers = (req, res) => {
-  let allUsers = fs.readFileSync(
-    join(process.cwd(), "src", "db", "users.json"),
-    "utf-8",
-  );
-  allUsers = JSON.parse(allUsers)
-
+  let allUsers = osFile.read("users");
 
   res.status(200).json({
     status: 200,
-    message: "Userlar muvofaqiyatli topildi",
-    data: allUsers
+    message: "Users successfully founded",
+    data: allUsers,
   });
 };
 

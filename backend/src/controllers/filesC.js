@@ -1,16 +1,12 @@
-import fs from "fs";
 import { join } from "path";
-
-const FILES_PATH = join(process.cwd(), "src", "db", "files.json");
-const USERS_PATH = join(process.cwd(), "src", "db", "users.json");
+import osFile from "../utils/fileSystem.js";
 
 const getAllFiles = (req, res) => {
-  let allFiles = fs.readFileSync(FILES_PATH, "utf-8");
-  allFiles = JSON.parse(allFiles);
+  let allFiles = osFile.read("files");
 
   res.status(200).json({
     status: 200,
-    message: "Filelar muvofaqiyatli topildi",
+    message: "Files founded",
     data: allFiles,
   });
 };
@@ -21,18 +17,16 @@ const addNewFile = (req, res) => {
 
   const fileName = Date.now() + "." + viewFile.name.split(".")[1];
 
-  let allFiles = fs.readFileSync(FILES_PATH, "utf-8");
-  allFiles = JSON.parse(allFiles);
+  let allFiles = osFile.read("files");
 
-  let allUsers = fs.readFileSync(USERS_PATH, "utf-8");
-  allUsers = JSON.parse(allUsers);
+  let allUsers = osFile.read("users");
 
-  let filterdUser = allUsers.find((user) => user.username == username);
+  let filteredUser = allUsers.find((user) => user.username == username);
 
-  if (!filterdUser) {
+  if (!filteredUser) {
     return res.status(400).json({
       status: 400,
-      message: "User afsuski topilmadi",
+      message: "User not found",
     });
   }
 
@@ -42,11 +36,12 @@ const addNewFile = (req, res) => {
     viewFile: fileName,
     date: new Date().toLocaleDateString(),
     size: +(viewFile.size / (1024 * 1024)).toFixed(2),
-    user: filterdUser,
+    user: filteredUser,
   };
 
   allFiles.push(newFile);
-  fs.writeFileSync(FILES_PATH, JSON.stringify(allFiles, null, 4));
+
+  osFile.write("files", allFiles);
 
   viewFile.mv(join(process.cwd(), "src", "uploads", fileName), (err) => {
     if (err) {
@@ -56,7 +51,7 @@ const addNewFile = (req, res) => {
 
   res.status(201).json({
     status: 201,
-    message: "Fayl muvofaqiyatli qo'shildi",
+    message: "File successfully added",
     data: allFiles,
   });
 };
@@ -64,48 +59,45 @@ const addNewFile = (req, res) => {
 const deleteFile = (req, res) => {
   const { fileId } = req.body;
 
-  let allFiles = fs.readFileSync(FILES_PATH, "utf-8");
-  allFiles = JSON.parse(allFiles);
+  let allFiles = osFile.read("files");
 
   let filteredFiles = allFiles.filter((file) => file.fileId != fileId);
 
-  fs.writeFileSync(FILES_PATH, JSON.stringify(filteredFiles, null, 4));
+  osFile.write("files", filteredFiles);
 
   res.status(200).json({
     status: 200,
-    message: "File o'chirildi",
+    message: "File deleted successfully",
   });
 };
 
 const updateFileName = (req, res) => {
   const { fileId, videoInput } = req.body;
 
-  let allFiles = fs.readFileSync(FILES_PATH, "utf-8");
-  allFiles = JSON.parse(allFiles);
+  let allFiles = osFile.read("files");
 
   let filteredFile = allFiles.find((file) => file.fileId == fileId);
 
   filteredFile.videoInput = videoInput;
 
-  fs.writeFileSync(FILES_PATH, JSON.stringify(allFiles, null, 4));
+  osFile.write("files", allFiles);
 
   res.status(201).json({
     status: 201,
-    message: "File yangilandi",
+    message: "File successfully updated",
   });
 };
 
 const getFilesById = (req, res) => {
   const { userId } = req.params;
 
-  let allFiles = fs.readFileSync(FILES_PATH, "utf-8");
-  allFiles = JSON.parse(allFiles);
+  let allFiles = osFile.read("files");
 
   let filteredFiles = allFiles.filter((file) => file.user.userId == userId);
 
   res.status(200).json({
     status: 200,
-    message: "Topildi",
+    message: "Founded",
     data: filteredFiles,
   });
 };

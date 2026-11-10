@@ -1,106 +1,28 @@
 [
     {
         "fileId": 2,
-        "videoInput": "Salom",
-        "viewFile": "1794047211392.mp4",
-        "date": "11/7/2026",
-        "size": 2.02,
-        "user": {
-            "userId": 5,
-            "username": "Azimjon",
-            "password": "Azimjon06",
-            "profileImg": "1794043025282.png"
-        }
-    },
-    {
-        "fileId": 4,
-        "videoInput": "qalesan",
-        "viewFile": "1794047211392.mp4",
-        "date": "11/7/2026",
-        "size": 2.02,
-        "user": {
-            "userId": 5,
-            "username": "Azimjon",
-            "password": "Azimjon06",
-            "profileImg": "1794043025282.png"
-        }
-    },
-    {
-        "fileId": 5,
-        "videoInput": "Nima gappp",
-        "viewFile": "1794049363485.mp4",
-        "date": "11/7/2026",
-        "size": 2.02,
-        "user": {
-            "userId": 5,
-            "username": "Azimjon",
-            "password": "Azimjon06",
-            "profileImg": "1794043025282.png"
-        }
-    },
-    {
-        "fileId": 6,
-        "videoInput": "tinchkuuu",
-        "viewFile": "1794049377173.mp4",
-        "date": "11/7/2026",
-        "size": 2.02,
-        "user": {
-            "userId": 5,
-            "username": "Azimjon",
-            "password": "Azimjon06",
-            "profileImg": "1794043025282.png"
-        }
-    },
-    {
-        "fileId": 7,
-        "viewFile": "1794049401153.mp4",
-        "date": "11/7/2026",
-        "size": 2.02,
+        "videoInput": "Azimjon",
+        "viewFile": "1794308890783.3840x2160",
+        "date": "11/10/2026",
+        "size": 14.79,
         "user": {
             "userId": 1,
-            "username": "Aliboy",
-            "password": "password1548",
-            "profileImg": "1794031527643.png"
-        },
-        "videoInput": "tinch bosa yaxshi"
-    },
-    {
-        "fileId": 9,
-        "videoInput": "gazini bosamiz",
-        "viewFile": "1794049422265.mp4",
-        "date": "11/7/2026",
-        "size": 2.02,
-        "user": {
-            "userId": 1,
-            "username": "Aliboy",
-            "password": "password1548",
-            "profileImg": "1794031527643.png"
+            "username": "Azimjon",
+            "password": "$argon2id$v=19$m=65536,t=3,p=4$gAihUoRzNANFmaGAt1bUAQ$77Nx6gJnqYGSSTwwwsl/qBd/xDWvq5PsKVXXK0GRVWo",
+            "profileImg": "1794308402650.jpg"
         }
     },
     {
-        "fileId": 10,
-        "videoInput": "zo'r",
-        "viewFile": "1794207126495.mp4",
-        "date": "11/9/2026",
+        "fileId": 3,
+        "videoInput": "Qalee",
+        "viewFile": "1794308915025.mp4",
+        "date": "11/10/2026",
         "size": 20.55,
         "user": {
-            "userId": 17,
-            "username": "qlesazzzz",
-            "password": "yaxshukuuuu",
-            "profileImg": "1794205308490.png"
-        }
-    },
-    {
-        "fileId": 11,
-        "videoInput": "Xop",
-        "viewFile": "1794207219883.mp4",
-        "date": "11/9/2026",
-        "size": 2.26,
-        "user": {
-            "userId": 13,
-            "username": "Ganji",
-            "password": "Ganji516tr",
-            "profileImg": "1794205169641.png"
+            "userId": 1,
+            "username": "Azimjon",
+            "password": "$argon2id$v=19$m=65536,t=3,p=4$gAihUoRzNANFmaGAt1bUAQ$77Nx6gJnqYGSSTwwwsl/qBd/xDWvq5PsKVXXK0GRVWo",
+            "profileImg": "1794308402650.jpg"
         }
     }
 ]

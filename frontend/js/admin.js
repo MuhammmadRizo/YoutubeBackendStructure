@@ -21,11 +21,11 @@ logoutBtn.addEventListener("click", () => {
   window.location = "../frontend/login.html";
 });
 
-// let token = window.localStorage.getItem("token");
+let token = window.localStorage.getItem("token");
 
-// if (!token) {
-//   window.location = "../register.html";
-// }
+if (!token) {
+  window.location = "../frontend/register.html";
+}
 
 async function getVideos() {
   let file = await axios.get("http://localhost:5050/files");
@@ -116,7 +116,7 @@ videoForm.addEventListener("submit", async (e) => {
 
   console.log(res.data);
 
-  if (res.data.status == 200) {
+  if (res.data.status == 201) {
     getVideos();
     videoInput.value = "";
     username.value = "";
