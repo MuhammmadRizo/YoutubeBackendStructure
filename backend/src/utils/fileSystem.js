@@ -8,7 +8,7 @@ export default {
       "utf-8",
     );
     data = JSON.parse(data);
-    return data
+    return data;
   },
 
   write: (filename, data) => {
@@ -16,5 +16,6 @@ export default {
       join(process.cwd(), "src", "db", `${filename}.json`),
       JSON.stringify(data, null, 4),
     );
+    return true;
   },
 };

@@ -54,7 +54,7 @@ const authRegister = async (req, res) => {
     ),
     refreshToken: JWT.sign(
       {
-        id: newUser.id,
+        id: newUser.userId,
         username: newUser.username,
         profileImg: newUser.profileImg,
         role: "ADMIN",
@@ -102,7 +102,7 @@ const authLogin = async (req, res) => {
     ),
     refreshToken: JWT.sign(
       {
-        id: existUser.id,
+        id: existUser.userId,
         username: existUser.username,
         profileImg: existUser.profileImg,
         role: "ADMIN",

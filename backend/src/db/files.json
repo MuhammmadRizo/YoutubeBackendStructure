@@ -8,7 +8,6 @@
         "user": {
             "userId": 1,
             "username": "Azimjon",
-            "password": "$argon2id$v=19$m=65536,t=3,p=4$gAihUoRzNANFmaGAt1bUAQ$77Nx6gJnqYGSSTwwwsl/qBd/xDWvq5PsKVXXK0GRVWo",
             "profileImg": "1794308402650.jpg"
         }
     },
@@ -21,7 +20,18 @@
         "user": {
             "userId": 1,
             "username": "Azimjon",
-            "password": "$argon2id$v=19$m=65536,t=3,p=4$gAihUoRzNANFmaGAt1bUAQ$77Nx6gJnqYGSSTwwwsl/qBd/xDWvq5PsKVXXK0GRVWo",
+            "profileImg": "1794308402650.jpg"
+        }
+    },
+    {
+        "fileId": 4,
+        "videoInput": "Qozoqiston",
+        "viewFile": "1794380910877.mp4",
+        "date": "11/11/2026 | 12:08:30 PM",
+        "size": 2.02,
+        "user": {
+            "userId": 1,
+            "username": "Azimjon",
             "profileImg": "1794308402650.jpg"
         }
     }

@@ -12,31 +12,24 @@ const getAllFiles = (req, res) => {
 };
 
 const addNewFile = (req, res) => {
-  const { videoInput, username } = req.body;
+  const { videoInput } = req.body;
   const { viewFile } = req.files;
 
   const fileName = Date.now() + "." + viewFile.name.split(".")[1];
 
   let allFiles = osFile.read("files");
 
-  let allUsers = osFile.read("users");
-
-  let filteredUser = allUsers.find((user) => user.username == username);
-
-  if (!filteredUser) {
-    return res.status(400).json({
-      status: 400,
-      message: "User not found",
-    });
-  }
-
   const newFile = {
     fileId: allFiles.length ? allFiles.at(-1).fileId + 1 : 1,
     videoInput,
     viewFile: fileName,
-    date: new Date().toLocaleDateString(),
+    date: `${new Date().toLocaleDateString()} | ${new Date().toLocaleTimeString()}`,
     size: +(viewFile.size / (1024 * 1024)).toFixed(2),
-    user: filteredUser,
+    user: {
+      userId: req.user.userId,
+      username: req.user.username,
+      profileImg: req.user.profileImg,
+    },
   };
 
   allFiles.push(newFile);

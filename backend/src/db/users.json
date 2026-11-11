@@ -4,5 +4,11 @@
         "username": "Azimjon",
         "password": "$argon2id$v=19$m=65536,t=3,p=4$gAihUoRzNANFmaGAt1bUAQ$77Nx6gJnqYGSSTwwwsl/qBd/xDWvq5PsKVXXK0GRVWo",
         "profileImg": "1794308402650.jpg"
+    },
+    {
+        "userId": 2,
+        "username": "Shoxrux",
+        "password": "$argon2id$v=19$m=65536,t=3,p=4$UXPJ/EePbmL1AVcjwehebg$SICqUh23uTXUCVmp0E4DYsN5lWOwcspu7zZGFDOZNPY",
+        "profileImg": "1794377660095.png"
     }
 ]
