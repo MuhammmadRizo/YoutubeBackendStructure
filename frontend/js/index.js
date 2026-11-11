@@ -6,12 +6,8 @@ const homeButton = document.querySelector("#homeButton");
 const inputSearch = document.querySelector("#inputSearch");
 const toggleMenu = document.querySelector(".toggle-menu");
 
-toggleMenu.addEventListener("click", () => {
-  toggleMenu.classList.add("toggleLeft");
-});
-
 let voiceS = new SpeechRecognition();
-voiceS.lang = "en-US";
+voiceS.lang = "uz-UZ";
 let publicVideos = [];
 
 let profileImg = window.localStorage.getItem("profileImg");
@@ -34,7 +30,6 @@ voiceS.onerror = (er) => {
 async function getAllUser() {
   let users = await axios.get("http://localhost:5050/users");
   users = users.data.data;
-  console.log(users);
   for (const user of users) {
     navbarList.innerHTML += `
         <li class="channel" onclick="getAllVideos('${user.userId}')">
@@ -89,7 +84,7 @@ async function getAllVideos(selectedUser, findVideos) {
                 <div class="iframe-footer-text">
                     <h3 class="channel-name">${video.videoInput}</h3>
                     <h2 class="iframe-title">${video.user.username}</h2>
-                    <time class="uploaded-time">${video.date} | ${new Date().toLocaleTimeString()}</time>
+                    <time class="uploaded-time">${video.date}}</time>
                     <div class="download" href="${video.downloadLink}">
                         <span>${video.size} MB</span>
                     </div>

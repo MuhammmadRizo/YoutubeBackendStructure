@@ -35,12 +35,12 @@ registerForm.addEventListener("submit", async (e) => {
 
     const res = await axios.post("http://localhost:5050/register", formData);
 
-    // window.localStorage.setItem("profileImg", res.data.data.profileImg);
-    // window.localStorage.setItem("token", res.data.token);
+    window.localStorage.setItem("profileImg", res.data.data.profileImg);
+    window.localStorage.setItem("token", res.data.token);
 
-    // if (res.data.status == 200) {
-    window.location = "../frontend/index.html";
-    // }
+    if (res.data.status == 201) {
+      window.location = "../frontend/index.html";
+    }
   } catch (error) {
     errorMessage.textContent = "Bu username'ga ega foydalanuvchi majvud";
   }

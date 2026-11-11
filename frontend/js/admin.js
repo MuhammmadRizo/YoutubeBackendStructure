@@ -19,6 +19,8 @@ uploadInput.addEventListener("change", () => {
 
 logoutBtn.addEventListener("click", () => {
   window.location = "../frontend/login.html";
+
+  window.localStorage.clear();
 });
 
 let token = window.localStorage.getItem("token");
@@ -28,7 +30,11 @@ if (!token) {
 }
 
 async function getVideos() {
-  let file = await axios.get("http://localhost:5050/files");
+  let file = await axios.get("http://localhost:5050/files", {
+    header: {
+      Authorization: "Bearer " + token,
+    },
+  });
 
   file = file.data.data;
 
@@ -56,6 +62,9 @@ async function getVideos() {
       let selectVidId = selectVid.fileId;
 
       let natija = await axios.delete(`http://localhost:5050/files/`, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
         data: {
           fileId: selectVidId,
         },
@@ -64,10 +73,6 @@ async function getVideos() {
       if (natija.status == 200) {
         getVideos();
       }
-
-      // console.log(file[index].fileId);
-      console.log(natija);
-      // console.log(selectVid);
     });
   });
 
@@ -76,30 +81,29 @@ async function getVideos() {
       const selectVid = file[index];
       let selectVidId = selectVid.fileId;
 
-      console.log(selectVid);
-
       let newName = window.prompt(
         `${selectVid.videoInput} - nomli videoni nima deb qayta nomlaymiz:`,
       );
 
-      let natija = await axios.put(`http://localhost:5050/files/`, {
-        fileId: selectVidId,
-        videoInput: newName,
-      });
+      let natija = await axios.put(
+        `http://localhost:5050/files/`,
+        {
+          fileId: selectVidId,
+          videoInput: newName,
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        },
+      );
 
       if (natija.status == 200) {
         getVideos();
       }
-
-      // console.log(natija.status)
-      // console.log(file[index].fileId);
-
-      console.log(natija);
     });
   });
 }
-
-// console.log(videoName);
 
 videoForm.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -107,19 +111,17 @@ videoForm.addEventListener("submit", async (e) => {
   const formVideoData = new FormData();
 
   formVideoData.append("videoInput", videoInput.value);
-  formVideoData.append("username", userInput.value);
   formVideoData.append("viewFile", uploadInput.files[0]);
 
-  const res = await axios.post("http://localhost:5050/files", formVideoData);
-
-  console.log(res);
-
-  console.log(res.data);
+  const res = await axios.post("http://localhost:5050/files", formVideoData, {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  });
 
   if (res.data.status == 201) {
     getVideos();
     videoInput.value = "";
-    username.value = "";
     uploadInput.value = "";
     fileName.textContent = "click upload a video";
   }

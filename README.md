@@ -11,6 +11,7 @@
 7. DELETE - fileId bo'yicha mavjud faylini o'chirib yuborish ✅
 8. GET - userId bo'yicha faqat shu userId uchun mos bo'lgan videolarni olish ✅
 9. Papkalarga ajratish kerak Router / Controller ✅
+10. GUARD tekshirildi ✅
 
 ##### Qolgan ish
 

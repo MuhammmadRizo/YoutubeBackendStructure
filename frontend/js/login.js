@@ -23,14 +23,12 @@ loginForm.addEventListener("submit", async (e) => {
 
     const userLog = await axios.post("http://localhost:5050/login", userInfo);
 
-    console.log(userLog);
-
-    window.localStorage.setItem("profileImg", userLog.data.data.profileImg);
-    window.localStorage.setItem("token", userLog.data.accessToken);
-
     if (userLog.data.status == 201) {
       window.location = "../frontend/index.html";
     }
+
+    window.localStorage.setItem("profileImg", userLog.data.data.profileImg);
+    window.localStorage.setItem("token", userLog.data.accessToken);
   } catch (error) {
     errorMessage.textContent = "username yoki parol xato";
   }
